@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invitación de Cumpleaños - Princesas Disney</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            background: linear-gradient(to bottom, #ffebf7, #fcd5ff);
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+            flex-wrap: wrap;  /* Se adapta a móviles */
+        }
+
+        .portada {
+            position: relative;
+            background: url('https://wallpapers.com/images/hd/disney-princess-background-gtcwqky6ghxx8q0t.jpg') no-repeat center center/cover;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            animation: fadeIn 3s ease-in-out;
+        }
+
+        .portada h1 {
+            font-size: 3rem;
+            color: #fff;
+            text-shadow: 2px 2px 4px #000;
+            background: rgba(255, 182, 193, 0.8);
+            padding: 20px 30px;
+            border-radius: 10px;
+            animation: bounce 2s infinite;
+        }
+
+        .tarjeta {
+            display: flex;
+            flex-direction: row;
+            background: #fff8fc;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            max-width: 900px;
+            width: 100%;
+            animation: slideIn 1.5s ease-out;
+        }
+
+        .info {
+            padding: 40px;
+            width: 50%;
+        }
+
+        .info h2 {
+            color: #ff69b4;
+            font-size: 2.2rem;
+        }
+
+        .info p {
+            font-size: 1.2rem;
+            margin: 10px 0;
+        }
+
+        .foto {
+            width: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .foto img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 24px;
+            font-size: 1.2rem;
+            color: #fff;
+            background: #ff69b4;
+            text-decoration: none;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background: #e6399c;
+            transform: scale(1.1);
+        }
+
+        @media (max-width: 768px) {
+            .tarjeta {
+                flex-direction: column;
+            }
+
+            .info, .foto {
+                width: 100%;
+            }
+
+            .portada h1 {
+                font-size: 2rem;
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Portada -->
+    <section class="portada">
+        <h1>¡Estás Invitado al Mundo de las Princesas! 👑</h1>
+    </section>
+
+    <!-- Invitación con Foto -->
+    <div class="container">
+        <div class="tarjeta">
+            <!-- Información del Evento -->
+            <div class="info">
+                <h2>¡Cumpleaños Real! 🎉</h2>
+                <p><strong>Fecha:</strong> Domingo, 10 de diciembre de 2024</p>
+                <p><strong>Hora:</strong> 5:00 PM</p>
+                <p><strong>Ubicación:</strong> Palacio Real, Calle de los Sueños 123</p>
+                <p>¡Ven vestido como tu princesa o príncipe favorito y disfruta de un día mágico!</p>
+                
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLScpzug77qLMnIhqPZ1VD0ZO2tt3OitQeLNhzyPUJ037hjdzwQ/viewform?usp=dialog" 
+                   target="_blank" class="btn">Confirma tu Asistencia</a>
+            </div>
+
+            <!-- Foto de la Cumpleañera -->
+            <div class="foto">
+                <img src="cumpleanera.jpg" 
+                alt="Foto de la Cumpleañera">
+            </div>
+        </div>
+    </div>
+</body>
+</html>
