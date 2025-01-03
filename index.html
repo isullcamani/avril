@@ -3,27 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Invitación de Cumpleaños - Princesas Disney</title>
+    <title>Invitación de Cumpleaños</title>
     <style>
+        /* Estilos Generales */
         body {
             margin: 0;
             padding: 0;
-            font-family: 'Comic Sans MS', cursive, sans-serif;
-            background: linear-gradient(to bottom, #ffebf7, #fcd5ff);
+            font-family: 'Fredoka One', cursive, sans-serif;
+            background: linear-gradient(to bottom, #ffdaff, #ff94c2);
             color: #333;
             overflow-x: hidden;
         }
 
+        /* Contenedor Principal */
         .container {
             display: flex;
             justify-content: center;
             align-items: center;
-            text-align: center;
+            text-align: left;
             padding: 20px;
             margin-top: 40px;
-            flex-wrap: wrap;  /* Se adapta a móviles */
         }
 
+        /* Portada Animada */
         .portada {
             position: relative;
             background: url('https://wallpapers.com/images/hd/disney-princess-background-gtcwqky6ghxx8q0t.jpg') no-repeat center center/cover;
@@ -35,88 +37,117 @@
         }
 
         .portada h1 {
-            font-size: 3rem;
+            font-size: 4rem;
             color: #fff;
-            text-shadow: 2px 2px 4px #000;
-            background: rgba(255, 182, 193, 0.8);
-            padding: 20px 30px;
-            border-radius: 10px;
+            text-shadow: 4px 4px 8px #000;
+            background: rgba(255, 182, 193, 0.7);
+            padding: 20px 40px;
+            border-radius: 25px;
             animation: bounce 2s infinite;
+            text-align: center;
+            font-family: 'Pacifico', cursive;
         }
 
+        /* Tarjeta de Invitación */
         .tarjeta {
             display: flex;
-            flex-direction: row;
-            background: #fff8fc;
-            border-radius: 15px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            background: #ffffff;
+            border-radius: 25px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
             overflow: hidden;
-            max-width: 900px;
-            width: 100%;
+            max-width: 1000px;
+            margin: auto;
             animation: slideIn 1.5s ease-out;
+            border: 4px solid #ff69b4;
         }
 
         .info {
-            padding: 40px;
-            width: 50%;
+            padding: 35px;
+            max-width: 550px;
+            text-align: center;
+            background-color: #fff8fc;
+            border-right: 4px solid #ff69b4;
         }
 
         .info h2 {
-            color: #ff69b4;
-            font-size: 2.2rem;
+            color: #ff1493;
+            font-size: 2.8rem;
+            text-transform: uppercase;
+            font-family: 'Indie Flower', cursive;
         }
 
         .info p {
-            font-size: 1.2rem;
-            margin: 10px 0;
+            font-size: 1.5rem;
+            margin: 15px 0;
+            line-height: 1.6;
         }
 
+        .info i {
+            color: #ff69b4;
+            font-size: 2.5rem;
+            margin: 10px;
+        }
+
+        /* Foto de la Cumpleañera */
         .foto {
-            width: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            overflow: hidden;
+            width: 400px;
+            height: auto;
+            position: relative;
         }
 
         .foto img {
             width: 100%;
-            height: auto;
+            height: 100%;
             object-fit: cover;
+            border-radius: 0 25px 25px 0;
+            border-left: 5px solid #ff69b4;
+            box-shadow: 0 0 15px rgba(255, 20, 147, 0.5);
         }
 
+        /* Botón de Confirmación */
         .btn {
             display: inline-block;
-            margin-top: 20px;
-            padding: 12px 24px;
-            font-size: 1.2rem;
+            margin-top: 30px;
+            padding: 15px 35px;
+            font-size: 1.6rem;
             color: #fff;
             background: #ff69b4;
             text-decoration: none;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            border-radius: 30px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
             transition: all 0.3s ease;
+            font-family: 'Fredoka One', cursive;
+            animation: bounceButton 2s infinite;
         }
 
         .btn:hover {
-            background: #e6399c;
+            background: #ff1493;
+            transform: scale(1.1);
+            box-shadow: 0 8px 16px rgba(255, 20, 147, 0.4);
+        }
+
+        /* Botón de Ubicación */
+        .btn-ubicacion {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 15px 35px;
+            font-size: 1.6rem;
+            color: #fff;
+            background: #ff8c00;
+            text-decoration: none;
+            border-radius: 30px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+            font-family: 'Fredoka One', cursive;
+            animation: bounceButton 2s infinite;
+        }
+
+        .btn-ubicacion:hover {
+            background: #e07b00;
             transform: scale(1.1);
         }
 
-        @media (max-width: 768px) {
-            .tarjeta {
-                flex-direction: column;
-            }
-
-            .info, .foto {
-                width: 100%;
-            }
-
-            .portada h1 {
-                font-size: 2rem;
-            }
-        }
-
+        /* Animaciones */
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
@@ -124,40 +155,45 @@
 
         @keyframes bounce {
             0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-15px); }
+            50% { transform: translateY(-20px); }
         }
 
         @keyframes slideIn {
-            from { transform: translateY(50px); opacity: 0; }
+            from { transform: translateY(80px); opacity: 0; }
             to { transform: translateY(0); opacity: 1; }
+        }
+
+        @keyframes bounceButton {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
         }
     </style>
 </head>
 <body>
+    
     <!-- Portada -->
     <section class="portada">
-        <h1>¡Estás Invitado al Mundo de las Princesas! 👑</h1>
+        <h1>¡Te Invito a festejar mis 5 añitos! 👑🎂</h1>
     </section>
 
     <!-- Invitación con Foto -->
     <div class="container">
         <div class="tarjeta">
-            <!-- Información del Evento -->
+            <!-- Sección de Información -->
             <div class="info">
-                <h2>¡Cumpleaños Real! 🎉</h2>
-                <p><strong>Fecha:</strong> Domingo, 10 de diciembre de 2024</p>
-                <p><strong>Hora:</strong> 5:00 PM</p>
-                <p><strong>Ubicación:</strong> Palacio Real, Calle de los Sueños 123</p>
-                <p>¡Ven vestido como tu princesa o príncipe favorito y disfruta de un día mágico!</p>
-                
+                <h2>🎉Avril Tamara Tito Ticona🎉</h2>
+                <p><i class="fa fa-calendar"></i><strong>Fecha:</strong> Sábado 11 de Enero de 2024</p>
+                <p><i class="fa fa-clock"></i><strong>Hora:</strong> 15:00 PM</p>
+                <p><i class="fa fa-map-marker"></i><strong>Ubicación:</strong> Calle Alejandro Sardón N°679</p>
                 <a href="https://docs.google.com/forms/d/e/1FAIpQLScpzug77qLMnIhqPZ1VD0ZO2tt3OitQeLNhzyPUJ037hjdzwQ/viewform?usp=dialog" 
                    target="_blank" class="btn">Confirma tu Asistencia</a>
+                <a href="https://www.google.com/maps/place/Sal%C3%B3n+de+Eventos+Infantiles+%22Timoteo%22/@-16.4982662,-68.1284095,186m/data=!3m1!1e3!4m6!3m5!1s0x915f210cb820f079:0x95cd71fc5f95a653!8m2!3d-16.4977975!4d-68.1281251!16s%2Fg%2F11h03393hq?entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D" 
+                   target="_blank" class="btn-ubicacion">Ver Ubicación en Google Maps</a>
             </div>
 
-            <!-- Foto de la Cumpleañera -->
+            <!-- Espacio para Foto -->
             <div class="foto">
-                <img src="cumpleanera.jpg" 
-                alt="Foto de la Cumpleañera">
+                <img src="cumpleanera.jpg" alt="Foto de la Cumpleañera">
             </div>
         </div>
     </div>
